@@ -167,7 +167,7 @@ namespace chatbotforas.Dialog
                 userProfile.Problem = (string)stepContext.Values["Problem"];
                 userProfile.LuisResult = (string)stepContext.Values["LuisResult"];
                 userProfile.Comment = "X";
-                SendEmail(userProfile);
+                //SendEmail(userProfile);
                 await stepContext.Context.SendActivityAsync(MessageFactory.Text("위의 내용을 토대로  메일을 보내겠습니다. \n 향후 개인 연락처로 연락 드리겠습니다!"), cancellationToken);
                 return await stepContext.EndDialogAsync(cancellationToken: cancellationToken);
 
@@ -185,7 +185,7 @@ namespace chatbotforas.Dialog
             userProfile.LuisResult = (string)stepContext.Values["LuisResult"];
             userProfile.Comment = (string)stepContext.Values["Comment"];
             await stepContext.Context.SendActivityAsync(MessageFactory.Text("위의 내용을 토대로  메일을 보내겠습니다. \n 향후 개인 연락처로 연락 드리겠습니다!"), cancellationToken);
-            SendEmail(userProfile);
+            //SendEmail(userProfile);
             return await stepContext.EndDialogAsync(cancellationToken: cancellationToken);
 
 
